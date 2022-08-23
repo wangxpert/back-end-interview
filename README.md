@@ -2,7 +2,7 @@
 
 ## Expectations:
 
-1. Using Python (preferred) or Javascript with framework(s) you enjoy
+1. Using Python (preferred) or Javascript with any framework(s) you enjoy
 2. Feel free to be creative, but the result NEED NOT BE COMPLEX or excessively time-consuming
 3. We will review your work together during the in-person interview
 4. Send a link to the source, a repository URL or a zip file of your project the day before your interview day
