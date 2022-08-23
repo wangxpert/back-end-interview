@@ -20,9 +20,9 @@ Create an API service that provides a GET histogram route for each column in the
 A GET request on any of these URLs should return HTML with the count of how many times each unique value appears in that column of the data. For example in the Commodity column, “Rice” appears 216 times, “Corn” 240, etc.
 
 This service should be runnable using one of:
+* (preferred) In Docker using `docker-compose up` or `docker run` command you provide
+* A simple readme describing how to start the service
 * http://repl.it or similar
-* In Docker using `docker-compose up` or `docker run` command you provide
-* Or, if containers are unfamiliar, a simple readme describing how to start the service
 
 Be prepared to talk about one aspect of this exercise you found interesting, or feel free to add (or not) any optimization or feature you do find interesting and would like to talk about. For example:
 * A simple HTML visualization
