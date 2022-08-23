@@ -2,10 +2,10 @@
 
 ## Expectations:
 
-1. Use any language/framework you enjoy
+1. Using Python (preferred) or Javascript with framework(s) you enjoy
 2. Feel free to be creative, but the result NEED NOT BE COMPLEX or excessively time-consuming
 3. We will review your work together during the in-person interview
-4. Send a link to the source, a repository URL or a zip file of your project on or before the morning your back-end interview day
+4. Send a link to the source, a repository URL or a zip file of your project the day before your interview day
 
 ## Exercise:
 
@@ -24,11 +24,12 @@ This service should be runnable using one of:
 * A simple readme describing how to start the service
 * http://repl.it or similar
 
-Be prepared to talk about one aspect of this exercise you found interesting, or feel free to add (or not) any optimization or feature you do find interesting and would like to talk about. For example:
-* A simple HTML visualization
+Be prepared to talk about one aspect of this exercise you found interesting, or feel free to add (or not) any optimization or feature you find interesting and would like to talk about. For example:
+* Visualizations
 * Testing strategies
-* Persistent data
+* Persisting data
 * Data modeling / analytics
+* API structure / versioning
 * ???
 
 ## Data source notes
