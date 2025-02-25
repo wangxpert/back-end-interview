@@ -7,4 +7,7 @@ postgres
 prisma
 unit tests
 
+eslint
+husky
+
 graphql
