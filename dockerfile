@@ -17,10 +17,11 @@ COPY . .
 RUN npx prisma generate
 
 # Build the app
-RUN npm run build
+# RUN npm run build
 
 # Expose the application port
 EXPOSE 3000
 
 # Start the app
-CMD npm run prisma:seed && npm run start
+# CMD npm run prisma:seed && npm run start
+CMD npm run dev

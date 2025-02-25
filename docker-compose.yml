@@ -13,8 +13,8 @@ services:
       postgres:
         condition: service_healthy
     volumes:
-      - .:/app
-      - /app/node_modules
+      - .:/app # Live reload
+      - /app/node_modules # Prevents overwriting node_modues
 
   postgres:
     image: postgres:15
