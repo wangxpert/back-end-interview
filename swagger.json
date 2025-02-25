@@ -1,0 +1,46 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Histogram API",
+    "version": "1.0.0",
+    "description": "API for generating histograms from a CSV dataset stored in PostgreSQL"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/{column}/histogram": {
+      "get": {
+        "summary": "Get a histogram for a specific column",
+        "description": "Returns an HTML response showing the count of unique values in the specified column.",
+        "parameters": [
+          {
+            "name": "column",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Column name from the dataset (e.g., Commodity, CommodityType, etc.)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Histogram generated successfully",
+            "content": {
+              "text/html": {
+                "example": "<h1>Commodity Histogram</h1><p>Rice: 216</p><p>Corn: 240</p>"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid column name"
+          }
+        }
+      }
+    }
+  }
+}
