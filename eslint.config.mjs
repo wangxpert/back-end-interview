@@ -10,7 +10,7 @@ import prettierPlugin from "eslint-plugin-prettier";
  */
 export default [
   {
-    ignores: ["node_modules", "dist", "build"]
+    ignores: ["node_modules", "dist", "build"],
   },
   js.configs.recommended, // Base JS rules
   {
@@ -18,15 +18,16 @@ export default [
     languageOptions: {
       parser: tsParser,
       globals: {
+        Global: "readonly",
         process: "readonly",
         console: "readonly",
-        __dirname: "readonly"
-      }
+        __dirname: "readonly",
+      },
     },
     plugins: {
       "@typescript-eslint": ts,
-      "n": node, // Node.js rules
-      "prettier": prettierPlugin
+      n: node, // Node.js rules
+      prettier: prettierPlugin,
     },
     rules: {
       ...ts.configs.recommended.rules,
@@ -37,8 +38,8 @@ export default [
       "prefer-const": "error",
       "n/no-missing-import": "off",
       "n/no-extraneous-import": "error",
-      "no-console": ["warn", { "allow": ["warn", "error"] }] // Allow console.warn and console.error
-    }
+      "no-console": ["warn", { allow: ["warn", "error"] }], // Allow console.warn and console.error
+    },
   },
-  prettier
+  prettier,
 ];
