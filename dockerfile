@@ -18,10 +18,10 @@ ARG DATABASE_URL
 ENV DATABASE_URL=${DATABASE_URL}
 
 # Generate Prisma client
-RUN npx prisma generate
+RUN npm run db:generate
 
 # Expose application port
 EXPOSE 3000
 
 # Start application
-CMD ["npm", "run", "start"]
+CMD npm run db:init && npm run start

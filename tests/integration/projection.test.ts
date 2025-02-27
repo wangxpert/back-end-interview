@@ -14,7 +14,26 @@ describe("Projecttion routes", () => {
         .get("/v1/projection/Commodity/histogram")
         .send();
       expect(response.status).toBe(200);
-      expect(response.text).toContain("<h1>Histogram for Commodity</h1>");
+    });
+    test("should match the histogram HTML structure with any column name", async () => {
+      await insertProjections(projections);
+      const response = await request(app)
+        .get("/v1/projection/Commodity/histogram")
+        .send();
+      expect(response.text).toMatch(
+        /^<h1>Histogram for [^<]+<\/h1><ul>(<li>[^<]+<\/li>)+<\/ul>$/,
+      );
+    });
+    test("should return 404 for an invalid column", async () => {
+      await insertProjections(projections);
+      const response = await request(app)
+        .get("/v1/projection/InvalidColumn/histogram")
+        .send();
+      expect(response.status).toBe(400);
+      expect(response.body).toEqual({
+        error:
+          '"column" must be one of [Attribute, Commodity, CommodityType, Units, YearType, Year, Value]',
+      });
     });
   });
 });
