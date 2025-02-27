@@ -14,12 +14,15 @@ datasource db {
 }
 
 model Projection {
-  id            Int     @id @default(autoincrement())
-  Attribute     String?
+  id            Int    @id @default(autoincrement())
+  Attribute     String
   Commodity     String
   CommodityType String
   Units         String
   YearType      String
   Year          String
   Value         Float
+
+  @@index([Commodity(ops: TextBloomOps)], type: Brin)
+  @@index([CommodityType(ops: TextBloomOps)], type: Brin)
 }

@@ -24,7 +24,7 @@ describe("Projecttion routes", () => {
         /^<h1>Histogram for [^<]+<\/h1><ul>(<li>[^<]+<\/li>)+<\/ul>$/,
       );
     });
-    test("should return 404 for an invalid column", async () => {
+    test("should return 400 for an invalid column", async () => {
       await insertProjections(projections);
       const response = await request(app)
         .get("/v1/projection/InvalidColumn/histogram")
@@ -34,6 +34,15 @@ describe("Projecttion routes", () => {
         error:
           '"column" must be one of [Attribute, Commodity, CommodityType, Units, YearType, Year, Value]',
       });
+    });
+  });
+});
+
+describe("Error handling", () => {
+  describe("POST /v1/unknown", () => {
+    test("should return 404 for an invalid route", async () => {
+      const response = await request(app).post("/v1/unknown").send();
+      expect(response.status).toBe(404);
     });
   });
 });

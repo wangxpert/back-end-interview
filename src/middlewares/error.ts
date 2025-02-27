@@ -4,6 +4,7 @@ import logger from "../config/logger";
 import config from "../config/config";
 
 export const errorHandler: ErrorRequestHandler = (err, req, res) => {
+  console.log("error handler ");
   let { statusCode, message } = err;
   if (config.env === "production" && !err.isOperational) {
     statusCode = httpStatus.INTERNAL_SERVER_ERROR;
@@ -22,5 +23,5 @@ export const errorHandler: ErrorRequestHandler = (err, req, res) => {
     logger.error(err);
   }
 
-  res.status(statusCode).send(response);
+  res.status(statusCode).json(response);
 };

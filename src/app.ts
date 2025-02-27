@@ -5,10 +5,12 @@ import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import * as fs from "fs";
 import * as path from "path";
+import httpStatus from "http-status";
 import routes from "./routes/v1";
 import config from "./config/config";
 import morgan from "./config/morgan";
 import { errorHandler } from "./middlewares/error";
+import ApiError from "./utils/ApiError";
 
 const app = express();
 
@@ -44,9 +46,10 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
-  next(new Error("Not found"));
+  next(new ApiError(httpStatus.NOT_FOUND, "Not found"));
 });
 
+// handle errors
 app.use(errorHandler);
 
 export default app;
