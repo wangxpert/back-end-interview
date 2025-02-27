@@ -24,6 +24,26 @@ describe("Projecttion routes", () => {
         /^<h1>Histogram for [^<]+<\/h1><ul>(<li>[^<]+<\/li>)+<\/ul>$/,
       );
     });
+    test("should return 200 and all histogram for an empty query parameter and column", async () => {
+      await insertProjections(projections);
+      const response = await request(app)
+        .get("/v1/projection/Commodity/histogram?q=")
+        .send();
+      expect(response.status).toBe(200);
+      expect(response.text).toMatch(
+        /^<h1>Histogram for [^<]+<\/h1><ul>(<li>[^<]+<\/li>)+<\/ul>$/,
+      );
+    });
+    test("should return 200 and matching histogram for a given query parameter and column", async () => {
+      await insertProjections(projections);
+      const response = await request(app)
+        .get("/v1/projection/Commodity/histogram?q=Barley")
+        .send();
+      expect(response.status).toBe(200);
+      expect(response.text).toMatch(
+        /^<h1>Histogram for [^<]+<\/h1><ul><li>[^<]+<\/li><\/ul>$/,
+      );
+    });
     test("should return 400 for an invalid column", async () => {
       await insertProjections(projections);
       const response = await request(app)

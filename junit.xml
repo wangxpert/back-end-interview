@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="7" failures="0" errors="0" time="2.3">
-  <testsuite name="Error Handler Middleware" errors="0" failures="0" skipped="0" timestamp="2025-02-27T15:18:58" time="0.845" tests="3">
-    <testcase classname="Error Handler Middleware should return 400 and error message for a known error" name="Error Handler Middleware should return 400 and error message for a known error" time="0.01">
+<testsuites name="jest tests" tests="9" failures="0" errors="0" time="2.462">
+  <testsuite name="Error Handler Middleware" errors="0" failures="0" skipped="0" timestamp="2025-02-27T18:56:01" time="0.968" tests="3">
+    <testcase classname="Error Handler Middleware should return 400 and error message for a known error" name="Error Handler Middleware should return 400 and error message for a known error" time="0.012">
     </testcase>
     <testcase classname="Error Handler Middleware should return 500 and generic message for an unknown error in production" name="Error Handler Middleware should return 500 and generic message for an unknown error in production" time="0.002">
     </testcase>
-    <testcase classname="Error Handler Middleware should return 400 with stack in development" name="Error Handler Middleware should return 400 with stack in development" time="0.004">
+    <testcase classname="Error Handler Middleware should return 400 with stack in development" name="Error Handler Middleware should return 400 with stack in development" time="0.006">
     </testcase>
   </testsuite>
-  <testsuite name="Projecttion routes" errors="0" failures="0" skipped="0" timestamp="2025-02-27T15:18:58" time="2.15" tests="4">
-    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 200 and histogram for an existing column" name="Projecttion routes GET /v1/projection/:column/histogram should return 200 and histogram for an existing column" time="0.06">
+  <testsuite name="Projecttion routes" errors="0" failures="0" skipped="0" timestamp="2025-02-27T18:56:01" time="2.302" tests="6">
+    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 200 and histogram for an existing column" name="Projecttion routes GET /v1/projection/:column/histogram should return 200 and histogram for an existing column" time="0.057">
     </testcase>
     <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should match the histogram HTML structure with any column name" name="Projecttion routes GET /v1/projection/:column/histogram should match the histogram HTML structure with any column name" time="0.01">
     </testcase>
-    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 400 for an invalid column" name="Projecttion routes GET /v1/projection/:column/histogram should return 400 for an invalid column" time="0.008">
+    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 200 and all histogram for an empty query parameter and column" name="Projecttion routes GET /v1/projection/:column/histogram should return 200 and all histogram for an empty query parameter and column" time="0.01">
+    </testcase>
+    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 200 and matching histogram for a given query parameter and column" name="Projecttion routes GET /v1/projection/:column/histogram should return 200 and matching histogram for a given query parameter and column" time="0.01">
+    </testcase>
+    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 400 for an invalid column" name="Projecttion routes GET /v1/projection/:column/histogram should return 400 for an invalid column" time="0.01">
     </testcase>
     <testcase classname="Error handling POST /v1/unknown should return 404 for an invalid route" name="Error handling POST /v1/unknown should return 404 for an invalid route" time="0.003">
     </testcase>
