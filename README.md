@@ -191,6 +191,8 @@ To run the tests, use the following command:
 npm test
 ```
 
+![Test Coverage Report](https://github.com/user-attachments/assets/5294cfef-f6eb-4eef-80fb-44ba074cee16)
+
 ## Data source
 
 Projection2021.csv - sourced from the "USDA Agricultural Baseline Database" for the current year projections https://www.ers.usda.gov/media/u55iwexw/projection2021.zip
