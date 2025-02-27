@@ -3,8 +3,7 @@ import httpStatus from "http-status";
 import logger from "../config/logger";
 import config from "../config/config";
 
-export const errorHandler: ErrorRequestHandler = (err, req, res) => {
-  console.log("error handler ");
+export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
   let { statusCode, message } = err;
   if (config.env === "production" && !err.isOperational) {
     statusCode = httpStatus.INTERNAL_SERVER_ERROR;
@@ -24,4 +23,5 @@ export const errorHandler: ErrorRequestHandler = (err, req, res) => {
   }
 
   res.status(statusCode).json(response);
+  next();
 };

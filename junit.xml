@@ -1,45 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="7" failures="3" errors="0" time="1.431">
-  <testsuite name="Error Handler Middleware" errors="0" failures="3" skipped="0" timestamp="2025-02-27T14:23:50" time="0.787" tests="3">
-    <testcase classname="Error Handler Middleware should return 400 and error message for a known error" name="Error Handler Middleware should return 400 and error message for a known error" time="0.014">
-      <failure>Error: expect(received).toEqual(expected) // deep equality
-
-- Expected  - 4
-+ Received  + 1
-
-- Object {
--   &quot;code&quot;: 400,
--   &quot;message&quot;: &quot;This is a test error&quot;,
-- }
-+ Object {}
-    at Object.&lt;anonymous&gt; (/Volumes/Work/Test/Nutrien/back-end-interview/tests/unit/middlewares/errorHandler.test.ts:22:27)
-    at processTicksAndRejections (node:internal/process/task_queues:105:5)</failure>
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="2.3">
+  <testsuite name="Error Handler Middleware" errors="0" failures="0" skipped="0" timestamp="2025-02-27T15:18:58" time="0.845" tests="3">
+    <testcase classname="Error Handler Middleware should return 400 and error message for a known error" name="Error Handler Middleware should return 400 and error message for a known error" time="0.01">
     </testcase>
     <testcase classname="Error Handler Middleware should return 500 and generic message for an unknown error in production" name="Error Handler Middleware should return 500 and generic message for an unknown error in production" time="0.002">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: 500
-Received: 400
-    at Object.&lt;anonymous&gt; (/Volumes/Work/Test/Nutrien/back-end-interview/tests/unit/middlewares/errorHandler.test.ts:31:29)
-    at processTicksAndRejections (node:internal/process/task_queues:105:5)</failure>
     </testcase>
-    <testcase classname="Error Handler Middleware should return 500 and stack trace for an unknown error in development" name="Error Handler Middleware should return 500 and stack trace for an unknown error in development" time="0.001">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: 500
-Received: 400
-    at Object.&lt;anonymous&gt; (/Volumes/Work/Test/Nutrien/back-end-interview/tests/unit/middlewares/errorHandler.test.ts:42:29)
-    at processTicksAndRejections (node:internal/process/task_queues:105:5)</failure>
+    <testcase classname="Error Handler Middleware should return 400 with stack in development" name="Error Handler Middleware should return 400 with stack in development" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="Projecttion routes" errors="0" failures="0" skipped="0" timestamp="2025-02-27T14:23:50" time="1.275" tests="4">
-    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 200 and histogram for an existing column" name="Projecttion routes GET /v1/projection/:column/histogram should return 200 and histogram for an existing column" time="0.058">
+  <testsuite name="Projecttion routes" errors="0" failures="0" skipped="0" timestamp="2025-02-27T15:18:58" time="2.15" tests="4">
+    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 200 and histogram for an existing column" name="Projecttion routes GET /v1/projection/:column/histogram should return 200 and histogram for an existing column" time="0.06">
     </testcase>
-    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should match the histogram HTML structure with any column name" name="Projecttion routes GET /v1/projection/:column/histogram should match the histogram HTML structure with any column name" time="0.008">
+    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should match the histogram HTML structure with any column name" name="Projecttion routes GET /v1/projection/:column/histogram should match the histogram HTML structure with any column name" time="0.01">
     </testcase>
-    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 400 for an invalid column" name="Projecttion routes GET /v1/projection/:column/histogram should return 400 for an invalid column" time="0.007">
+    <testcase classname="Projecttion routes GET /v1/projection/:column/histogram should return 400 for an invalid column" name="Projecttion routes GET /v1/projection/:column/histogram should return 400 for an invalid column" time="0.008">
     </testcase>
-    <testcase classname="Error handling POST /v1/unknown should return 404 for an invalid route" name="Error handling POST /v1/unknown should return 404 for an invalid route" time="0.009">
+    <testcase classname="Error handling POST /v1/unknown should return 404 for an invalid route" name="Error handling POST /v1/unknown should return 404 for an invalid route" time="0.003">
     </testcase>
   </testsuite>
 </testsuites>

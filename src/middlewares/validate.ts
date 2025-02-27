@@ -2,6 +2,7 @@
 import httpStatus from "http-status";
 import { NextFunction, Request, Response } from "express";
 import Joi from "joi";
+import ApiError from "../utils/ApiError";
 
 const pick = (obj: object, keys: string[]) => {
   return keys.reduce<{ [key: string]: unknown }>((finalObj, key) => {
@@ -24,7 +25,7 @@ const validate =
       const errorMessage = error.details
         .map((details) => details.message)
         .join(", ");
-      return res.status(httpStatus.BAD_REQUEST).json({ error: errorMessage });
+      return next(new ApiError(httpStatus.BAD_REQUEST, errorMessage));
     }
     Object.assign(req, value);
     return next();

@@ -30,8 +30,9 @@ describe("Projecttion routes", () => {
         .get("/v1/projection/InvalidColumn/histogram")
         .send();
       expect(response.status).toBe(400);
-      expect(response.body).toEqual({
-        error:
+      expect(response.body).toMatchObject({
+        code: 400,
+        message:
           '"column" must be one of [Attribute, Commodity, CommodityType, Units, YearType, Year, Value]',
       });
     });
