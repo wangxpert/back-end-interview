@@ -6,12 +6,9 @@ import swaggerUi from "swagger-ui-express";
 import * as fs from "fs";
 import * as path from "path";
 import routes from "./routes/v1";
-import dotenv from "dotenv";
 import config from "./config/config";
 import morgan from "./config/morgan";
 import { errorHandler } from "./middlewares/error";
-
-dotenv.config();
 
 const app = express();
 

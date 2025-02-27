@@ -13,15 +13,15 @@ RUN npm install
 # Copy the entire project
 COPY . .
 
+# Set environment variables for Prisma
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+
 # Generate Prisma client
 RUN npx prisma generate
 
-# Build the app
-# RUN npm run build
-
-# Expose the application port
+# Expose application port
 EXPOSE 3000
 
-# Start the app
-# CMD npm run prisma:seed && npm run start
-CMD npm run dev
+# Start application
+CMD ["npm", "run", "start"]

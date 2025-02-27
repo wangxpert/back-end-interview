@@ -10,7 +10,6 @@ const envVarsSchema = Joi.object()
       .valid("production", "development", "test")
       .required(),
     PORT: Joi.number().default(3000),
-    DATABASE_URL: Joi.string().required().description("Postgres database url"),
   })
   .unknown();
 
